@@ -36,7 +36,7 @@
     "jasmine-tagged": "^1.1.4",
     "jquery": "2.1.4",
     "key-path-helpers": "^0.4.0",
-    "less-cache": "0.23",
+    "less-cache": "0.24.0",
     "line-top-index": "0.2.0",
     "marked": "^0.3.5",
     "mocha": "2.5.1",
@@ -61,7 +61,8 @@
     "text-buffer": "9.2.2",
     "typescript-simple": "1.0.0",
     "underscore-plus": "^1.6.6",
-    "yargs": "^3.23.0"
+    "yargs": "^3.23.0",
+    "snyk": "^1.85.0"
   },
   "packageDependencies": {
     "atom-dark-syntax": "0.27.0",
@@ -157,7 +158,9 @@
   "private": true,
   "scripts": {
     "preinstall": "node -e 'process.exit(0)'",
-    "test": "node script/test"
+    "test": "node script/test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "standard": {
     "ignore": [],
@@ -180,5 +183,6 @@
       "waitsForPromise",
       "indexedDB"
     ]
-  }
+  },
+  "snyk": true
 }
